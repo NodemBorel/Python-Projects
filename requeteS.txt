@@ -1,0 +1,40 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Liste de tous les etudiant
+SELECT * FROM etudiant
+
+//les libelle matiere avec les cof de chaque matiere
+SELECT LibelleMat,CoeffMat FROM matiere
+
+//liste des etudiant trier par nom dans un ordre decroissant
+SELECT * FROM etudiant ORDER BY NomEtudiant DESC      (desc = decroissant)
+
+//liste des matiere ayant un cof sup a 2
+SELECT * FROM matiere WHERE (CoeffMat > 2)
+
+//le nom,pre,dat,email, des etudiant fille
+SELECT NomEtudiant,PrenomEtudiant,DateNEtudiant,email FROM etudiant WHERE Sexe = 'f'
+
+//la liste des etudiant garcon trie par dat ascendante
+SELECT * FROM etudiant WHERE Sexe = 'm' ORDER BY DateNEtudiant ASC
+
+//liste des eveluaution entre une date x et un date y
+SELECT * FROM `evaluation` WHERE DateEvaluation BETWEEN '2022-6-16' and '2022-6-28'
+
+//liste evaluation oral trie par date de passation de l,evluation ascd
+SELECT * FROM evaluation WHERE TypeEvaluation = 'oral' ORDER BY DateEvaluation ASC
+
+//La liste des eveluation trie par type dans un order decroissant et par date dans un ordre croissant
+SELECT * FROM evaluation ORDER BY TypeEvaluation DESC, DateEvaluation ASC
+
+//les code matiere et les note des eveluation passe par l,etudiant x
+SELECT CodeMat,Note FROM evaluation WHERE CodeEtudiant = '1'
+
+//code et les note des eveluation passe par l'etudiant x et dont la note est inferieur ou egale a 16
+SELECT CodeMat,Note FROM evaluation WHERE CodeEtudiant = '1' AND note >=9
+
+//les etudian vivant yaounde ou bertua
+SELECT * FROM etudiant63 WHERE ville = 'yaounde' OR vill = 'bertoua'
+
+
+Python -m pip install pillow
+                      whitenoise
